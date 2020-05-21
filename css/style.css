@@ -1,0 +1,193 @@
+/* Inspired by https://codepen.io/kymarkak/pen/JEzgLZ?editors=0110 */
+
+body {
+  background: gray;
+}
+
+::before, ::after {
+  content: "";
+  position: absolute;
+}
+
+.icon {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 512px;
+  height: 512px;
+  background: #2989dd;
+  border-radius: 23%;
+}
+
+.safari {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  width: 80%;
+  height: 80%;
+  background: #54a0f3;
+  box-shadow: 0 0 4px 3px rgba(0, 0, 0, .2);
+  border-radius: 50%;
+}
+
+.ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #f9fafa;
+  background: -webkit-gradient(radial, circle, color-stop(0%, transparent), color-stop(60%, transparent), color-stop(60%, #ececec), color-stop(64%, #ececec), color-stop(66%, #f9fafa));
+  background: -webkit-radial-gradient(circle, transparent 0%, transparent 0%, transparent 60%, #ececec 60%, #ececec 64%, #f9fafa 66%);
+  background: -o-radial-gradient(circle, transparent 0%, transparent 60%, #ececec 60%, #ececec 64%, #f9fafa 66%);
+  background: -moz-radial-gradient(circle, transparent 0%, transparent 60%, #ececec 60%, #ececec 64%, #f9fafa 66%);
+  background: radial-gradient(circle, transparent 0%, transparent 60%, #ececec 60%, #ececec 64%, #f9fafa 66%);
+  border-radius: 50%;
+}
+
+.center {
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  width: 20%;
+  height: 20%;
+  box-shadow: inset 0 0 0 9px rgba(255, 255, 255, .2);
+  border-radius: 50%;
+}
+
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.north .triangle {
+  left: calc((100% - 20px)/2);
+  top: calc(-40% - 16px);
+  border-right: 10px solid transparent;
+  border-bottom: 50px solid #f9fafa;
+  border-left: 10px solid transparent;
+}
+
+.northeast .triangle {
+  right: calc((100% - 40% - 36px)/2);
+  top: calc(-40% + 21px);
+  border-right: 7px solid transparent;
+  border-bottom: 25px solid #f9fafa;
+  border-left: 7px solid transparent;
+  transform-origin: center bottom;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.east .triangle {
+  right: calc(-40% - 16px);
+  top: calc((100% - 20px)/2);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 50px solid #f9fafa;
+}
+
+.southeast .triangle {
+  right: calc((100% - 40% - 54px)/2);
+  bottom: calc(-40% + 24px);
+  border-top: 25px solid #f9fafa;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  -webkit-transform: rotate(-45deg);
+  tranform: rotate(-45deg);
+}
+
+.south .triangle {
+  left: calc((100% - 20px)/2);
+  bottom: calc(-40% - 16px);
+  border-top: 50px solid #f9fafa;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+
+.southwest .triangle {
+  left: calc((100% - 40% - 54px)/2);
+  bottom: calc(-40% + 24px);
+  border-top: 25px solid #f9fafa;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.west .triangle {
+  left: calc(-40% - 16px);
+  top: calc((100% - 20px)/2);
+  border-top: 10px solid transparent;
+  border-right: 50px solid #f9fafa;
+  border-bottom: 10px solid transparent;
+}
+
+.northwest .triangle {
+  left: calc((100% - 40% - 36px)/2);
+  top: calc(-40% + 21px);
+  border-right: 7px solid transparent;
+  border-bottom: 25px solid #f9fafa;
+  border-left: 7px solid transparent;
+  transform-origin: center bottom;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.letter {
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Arial';
+  text-align: center;
+  color: #fff;
+}
+
+.north .letter {
+  position: absolute;
+  left: calc((100% - 2em + 1.3em)/2);
+  top: -120%;
+}
+
+.east .letter {
+  position: absolute;
+  right: -120%;
+  top: calc((100% - 2em + 1em)/2);
+}
+
+.south .letter {
+  position: absolute;
+  left: calc((100% - 2em + 1.4em)/2);
+  bottom: -120%;
+}
+
+.west .letter {
+  position: absolute;
+  left: -120%;
+  top: calc((100% - 2em + 1em)/2);
+}
+
+.needle {
+  position: absolute;
+  left: 10%;
+  top: 45%;
+  width: 80%;
+  height: 10%;
+  transform-origin: center center;
+  -webkit-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+}
+
+.needle::before {
+  left: 0;
+  top: calc((100% - 34px)/2);
+  border-top: 17px solid transparent;
+  border-right: 164px solid #f9fafa;
+  border-bottom: 17px solid transparent;
+}
+
+.needle::after {
+  right: 0;
+  top: calc((100% - 34px)/2);
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+  border-left: 164px solid #cb3706;
+}
